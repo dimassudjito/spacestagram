@@ -1,0 +1,28 @@
+- info
+  - page: https://www.shopify.ca/careers/frontend-developer-intern-summer-2022-remote-us-canada_e4d4fb64-21c6-421c-b889-a51195090d5b
+  - project info: https://docs.google.com/document/d/13zXpyrC2yGxoLXKktxw2VJG2Jw8SdUfliLM-bYQLjqE/edit#
+- task: make interface for NASA image api
+  - fetch data from NASA's api
+  - display descriptive data for each image
+  - like and unlike an image
+- submission
+  - demo, repo, notes
+- strategy
+  - create simplest form to meet requirement
+    - model after tumblr instead of Instagram?
+  - add extra features
+- extra features idea
+  - ability to saved pictures in localStorage
+  - show widgets of other API from nasa
+  - loading animation
+  - liking/unliking animation
+  - shareable link
+  - image filtering
+  - animating background
+  - text to speech for description
+- NASA APOD api
+  - astronomy images: https://api.nasa.gov/planetary/apod
+  - available filter: date, count
+  - api key stored in evernote, and in env variable
+- framework
+  - react + material UI
