@@ -70,17 +70,23 @@ const Timeline = () => {
                       </Typography>
                     </CardContent>
                     <Grid container>
-                      <Grid item xs={11}>
+                      <Grid item xs={10}>
                         <Typography sx={{ color: 'text.secondary', p: 2 }}>
                           {image.date}
                         </Typography>
                       </Grid>
-                      <Grid item>
-                        <CardActions>
+                      <Grid item xs={2}>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            p: 1
+                          }}
+                        >
                           <IconButton aria-label="like">
                             <FavoriteIcon />
                           </IconButton>
-                        </CardActions>
+                        </Box>
                       </Grid>
                     </Grid>
                   </Card>
