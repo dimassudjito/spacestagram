@@ -4,16 +4,16 @@ import axios from 'axios'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import Typography from '@mui/material/Typography'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Card from '@mui/material/Card'
 
-const cards = [1, 2, 3]
 const api =
-  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-07-01&end_date=2013-07-03&thumbs=True'
+  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-07-01&end_date=2013-07-12&thumbs=True'
 
 const Timeline = () => {
   const [images, setImages] = useState([])
@@ -63,17 +63,26 @@ const Timeline = () => {
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Heading
+                        {image.title}
                       </Typography>
                       <Typography>
-                        This is a media card. You can use this section to
-                        describe the content.
+                        {image.explanation.substring(0, 200)}
                       </Typography>
                     </CardContent>
-                    <CardActions>
-                      <Button size="small">View</Button>
-                      <Button size="small">Edit</Button>
-                    </CardActions>
+                    <Grid container>
+                      <Grid item xs={11}>
+                        <Typography sx={{ color: 'text.secondary', p: 2 }}>
+                          {image.date}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <CardActions>
+                          <IconButton aria-label="like">
+                            <FavoriteIcon />
+                          </IconButton>
+                        </CardActions>
+                      </Grid>
+                    </Grid>
                   </Card>
                 </Grid>
               ))}
