@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
@@ -11,8 +12,26 @@ import CardMedia from '@mui/material/CardMedia'
 import Card from '@mui/material/Card'
 
 const cards = [1, 2, 3]
+const api =
+  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-07-01&end_date=2013-07-03&thumbs=True'
 
 const Timeline = () => {
+  const [images, setImages] = useState([])
+
+  const getImages = async () => {
+    try {
+      const res = await axios.get(api)
+      console.log(res.data)
+      setImages(res.data)
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  useEffect(() => {
+    getImages()
+  }, [])
+
   return (
     <Box
       sx={{
@@ -24,19 +43,23 @@ const Timeline = () => {
         <Grid container>
           <Grid item xs={12} md={8}>
             <Grid container spacing={4}>
-              {cards.map((card) => (
-                <Grid item key={card}>
+              {images.map((image) => (
+                <Grid item key={image.date}>
                   <Card
                     sx={{
-                      height: '100%',
+                      width: '100%',
                       display: 'flex',
                       flexDirection: 'column'
                     }}
                   >
                     <CardMedia
                       component="img"
-                      image="https://source.unsplash.com/random"
-                      alt="random"
+                      image={
+                        image.media_type === 'image'
+                          ? image.url
+                          : image.thumbnail_url
+                      }
+                      alt="Awesome space picture"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -56,7 +79,7 @@ const Timeline = () => {
               ))}
             </Grid>
           </Grid>
-
+          {/* Side widget, only appears in large screen */}
           <Grid
             item
             md={4}
