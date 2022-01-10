@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 import Header from './components/Header'
 import Title from './components/Title'
-import ImageCard from './components/ImageCard'
+import Timeline from './components/Timeline'
 
 const theme = createTheme({
   palette: {
@@ -25,7 +25,7 @@ const App = () => {
       <Header />
       <main>
         <Title />
-        <ImageCard />
+        <Timeline />
       </main>
     </ThemeProvider>
   )
