@@ -26,3 +26,5 @@
   - api key stored in evernote, and in env variable
 - framework
   - react + material UI
+- tumblr color pallette
+  - #34526f + white
