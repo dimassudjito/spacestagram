@@ -6,7 +6,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
 
 const Header = () => {
   return (
-    <AppBar position="relative">
+    <AppBar position="sticky">
       <Toolbar>
         <RocketLaunchIcon sx={{ mr: 2 }} />
       </Toolbar>
