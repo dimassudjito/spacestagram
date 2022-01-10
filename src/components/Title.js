@@ -20,7 +20,7 @@ const Title = () => {
           color="secondary.main"
           gutterBottom
         >
-          Spacestagram
+          Space
         </Typography>
         <Typography
           variant="h6"
