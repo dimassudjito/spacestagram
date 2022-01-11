@@ -21,7 +21,7 @@ const Title = ({ submitYear }) => {
           variant="h1"
           align="center"
           color="secondary.main"
-          gutterBottom
+          sx={{ mb: 2 }}
         >
           Space.
         </Typography>
@@ -42,7 +42,7 @@ const Title = ({ submitYear }) => {
           min={1996}
           max={2020}
           color="secondary"
-          sx={{ mt: 2 }}
+          sx={{ my: 4 }}
           onChange={(e) => {
             setYear(e.target.value)
           }}
