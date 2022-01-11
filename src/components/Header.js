@@ -13,7 +13,11 @@ const Header = () => {
       <Toolbar>
         <RocketLaunchIcon sx={{ mr: 2 }} />
         <Box sx={{ flexGrow: 1 }} />
-        <Tooltip title="Shopify fall intern challenge, inspired by Tumblr">
+        {/* enterTouchDelay make tooltip appear on touch*/}
+        <Tooltip
+          title="Shopify fall intern challenge, inspired by Tumblr"
+          enterTouchDelay={0}
+        >
           <HelpOutlineIcon />
         </Tooltip>
       </Toolbar>
