@@ -11,7 +11,7 @@ import Post from './Post.js'
 const Timeline = ({ images, loading }) => {
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
         <CircularProgress color="secondary" />
       </Box>
     )

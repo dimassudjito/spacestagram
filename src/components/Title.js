@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
+import Slider from '@mui/material/Slider'
 
 const Title = () => {
+  const [year, setYear] = useState(2002)
+
   return (
     <Box
       sx={{
@@ -27,8 +30,22 @@ const Title = () => {
           color="secondary.main"
           paragraph
         >
-          Your multiplanetary photo-sharing app
+          Your multiplanetary photo-sharing app.
         </Typography>
+        <Slider
+          aria-label="Year"
+          value={year}
+          valueLabelDisplay="on"
+          step={1}
+          marks
+          min={1996}
+          max={2020}
+          color="secondary"
+          sx={{ mt: 2, mb: -6 }}
+          onChange={(e) => {
+            setYear(e.target.value)
+          }}
+        />
       </Container>
     </Box>
   )

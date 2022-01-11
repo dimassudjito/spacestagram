@@ -8,8 +8,8 @@ import Header from './components/Header'
 import Title from './components/Title'
 import Timeline from './components/Timeline'
 
-const api =
-  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-07-01&end_date=2013-07-12&thumbs=True'
+const url =
+  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-01-01&end_date=2013-1-31&thumbs=True'
 
 const theme = createTheme({
   palette: {
@@ -28,9 +28,11 @@ const theme = createTheme({
 const App = () => {
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
+  const [year, setYear] = useState(2002)
 
   const getImages = async () => {
     try {
+      const api = `https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=${year}-01-01&end_date=${year}-1-31&thumbs=True`
       const { data } = await axios.get(api)
       console.log(data)
       setImages(data)
