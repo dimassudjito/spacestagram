@@ -29,7 +29,7 @@ const App = () => {
 
   const getImages = async () => {
     try {
-      const api = `https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=${year}-01-01&end_date=${year}-1-31&thumbs=True`
+      const api = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&start_date=${year}-01-01&end_date=${year}-1-14&thumbs=True`
       const { data } = await axios.get(api)
       console.log(data)
       setImages(data)
