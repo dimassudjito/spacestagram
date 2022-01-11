@@ -7,6 +7,11 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 
+/**
+ * Display a picture from a mars rover and the name of the rover
+ * @returns Mars watch widget
+ * @todo fetch random image from a mars rover
+ */
 const Widget = () => {
   return (
     <Box>

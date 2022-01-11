@@ -15,6 +15,9 @@ const Post = ({ image }) => {
   const [like, setLike] = useState(false)
   const [expand, setExpand] = useState(false)
 
+  /**
+   * Inverse the state of like
+   */
   const likeImage = () => {
     setLike(!like)
   }
@@ -27,6 +30,7 @@ const Post = ({ image }) => {
         flexDirection: 'column'
       }}
     >
+      {/* Display thumbnail if video sends video instead of image */}
       <CardMedia
         component="img"
         image={image.media_type === 'image' ? image.url : image.thumbnail_url}
@@ -36,6 +40,7 @@ const Post = ({ image }) => {
         <Typography gutterBottom variant="h5" component="h2">
           {image.title}
         </Typography>
+        {/* Display the first 200 characters by default */}
         <Typography>
           {expand
             ? image.explanation

@@ -21,6 +21,7 @@ const Timeline = ({ images, loading }) => {
       <Container sx={{ py: 8 }} maxWidth="md">
         <Grid container>
           <Grid item xs={12} md={8}>
+            {/* Display each image in images */}
             <Grid container spacing={4}>
               {images.map((image) => (
                 <Grid item key={image.date}>

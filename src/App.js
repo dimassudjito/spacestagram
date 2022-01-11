@@ -27,11 +27,13 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   const [year, setYear] = useState(2002)
 
+  /**
+   * Fetch picture of the day based on the chosen year
+   */
   const getImages = async () => {
     try {
       const api = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&start_date=${year}-01-01&end_date=${year}-1-14&thumbs=True`
       const { data } = await axios.get(api)
-      console.log(data)
       setImages(data)
       setLoading(false)
     } catch (err) {
@@ -39,10 +41,17 @@ const App = () => {
     }
   }
 
+  /**
+   * Handler for state year, help binds with input form
+   * @param e new value of year
+   */
   const changeYear = (e) => {
     setYear(e)
   }
 
+  /**
+   * Confirm change of year and re-fetch images
+   */
   const submitYear = () => {
     setLoading(true)
     getImages()

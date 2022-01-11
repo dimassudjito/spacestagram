@@ -31,6 +31,7 @@ const Title = ({ year, submitYear, changeYear }) => {
         >
           Your multiplanetary photo-sharing app.
         </Typography>
+        {/* Slider is binded to the parent's state */}
         <Slider
           aria-label="Year"
           value={year}
