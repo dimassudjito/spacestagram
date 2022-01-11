@@ -8,9 +8,6 @@ import Header from './components/Header'
 import Title from './components/Title'
 import Timeline from './components/Timeline'
 
-const url =
-  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-01-01&end_date=2013-1-31&thumbs=True'
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -42,6 +39,12 @@ const App = () => {
     }
   }
 
+  const submitYear = (e) => {
+    setYear(e)
+    setLoading(true)
+    getImages()
+  }
+
   useEffect(() => {
     getImages()
   }, [])
@@ -50,7 +53,7 @@ const App = () => {
       <CssBaseline />
       <Header />
       <main>
-        <Title />
+        <Title submitYear={submitYear} />
         <Timeline images={images} loading={loading} />
       </main>
     </ThemeProvider>

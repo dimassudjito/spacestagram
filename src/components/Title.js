@@ -4,8 +4,9 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Slider from '@mui/material/Slider'
+import Button from '@mui/material/Button'
 
-const Title = () => {
+const Title = ({ submitYear }) => {
   const [year, setYear] = useState(2002)
 
   return (
@@ -41,11 +42,22 @@ const Title = () => {
           min={1996}
           max={2020}
           color="secondary"
-          sx={{ mt: 2, mb: -6 }}
+          sx={{ mt: 2 }}
           onChange={(e) => {
             setYear(e.target.value)
           }}
         />
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={() => {
+              submitYear(year)
+            }}
+          >
+            Change year
+          </Button>
+        </Box>
       </Container>
     </Box>
   )
