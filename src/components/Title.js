@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
@@ -6,9 +6,7 @@ import Typography from '@mui/material/Typography'
 import Slider from '@mui/material/Slider'
 import Button from '@mui/material/Button'
 
-const Title = ({ submitYear }) => {
-  const [year, setYear] = useState(2002)
-
+const Title = ({ year, submitYear, changeYear }) => {
   return (
     <Box
       sx={{
@@ -44,17 +42,11 @@ const Title = ({ submitYear }) => {
           color="secondary"
           sx={{ my: 4 }}
           onChange={(e) => {
-            setYear(e.target.value)
+            changeYear(e.target.value)
           }}
         />
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Button
-            variant="outlined"
-            color="secondary"
-            onClick={() => {
-              submitYear(year)
-            }}
-          >
+          <Button variant="outlined" color="secondary" onClick={submitYear}>
             Change year
           </Button>
         </Box>

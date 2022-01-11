@@ -39,8 +39,11 @@ const App = () => {
     }
   }
 
-  const submitYear = (e) => {
+  const changeYear = (e) => {
     setYear(e)
+  }
+
+  const submitYear = () => {
     setLoading(true)
     getImages()
   }
@@ -54,7 +57,7 @@ const App = () => {
       <CssBaseline />
       <Header />
       <main>
-        <Title submitYear={submitYear} />
+        <Title year={year} submitYear={submitYear} changeYear={changeYear} />
         <Timeline images={images} loading={loading} />
       </main>
     </ThemeProvider>
