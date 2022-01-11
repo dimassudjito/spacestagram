@@ -7,6 +7,7 @@ import Card from '@mui/material/Card'
 import CircularProgress from '@mui/material/CircularProgress'
 
 import Post from './Post.js'
+import Widget from './Widget.js'
 
 const Timeline = ({ images, loading }) => {
   if (loading) {
@@ -29,13 +30,13 @@ const Timeline = ({ images, loading }) => {
               ))}
             </Grid>
           </Grid>
-          {/* Side widget, only appears in large screen */}
+          {/* Side widget only appears in large screen */}
           <Grid
             item
             md={4}
             sx={{ pl: 4, display: { xs: 'none', md: 'block' } }}
           >
-            <Card sx={{ height: '15em', width: '100%' }}>some widget here</Card>
+            <Widget />
           </Grid>
         </Grid>
       </Container>
