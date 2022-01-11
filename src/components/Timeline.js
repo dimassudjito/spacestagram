@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
@@ -8,26 +7,7 @@ import Card from '@mui/material/Card'
 
 import Post from './Post.js'
 
-const api =
-  'https://api.nasa.gov/planetary/apod?api_key=BvdIgll7q8tLys8FshqwrTCLGrbbprucd6DjtqwX&start_date=2013-07-01&end_date=2013-07-12&thumbs=True'
-
-const Timeline = () => {
-  const [images, setImages] = useState([])
-
-  const getImages = async () => {
-    try {
-      const { data } = await axios.get(api)
-      console.log(data)
-      setImages(data)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  useEffect(() => {
-    getImages()
-  }, [])
-
+const Timeline = ({ images }) => {
   return (
     <Box
       sx={{
