@@ -9,9 +9,11 @@ import CardMedia from '@mui/material/CardMedia'
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 
 const Post = ({ image }) => {
   const [like, setLike] = useState(false)
+  const [expand, setExpand] = useState(false)
 
   const likeImage = () => {
     setLike(!like)
@@ -34,7 +36,23 @@ const Post = ({ image }) => {
         <Typography gutterBottom variant="h5" component="h2">
           {image.title}
         </Typography>
-        <Typography>{image.explanation.substring(0, 200)}</Typography>
+        <Typography>
+          {expand
+            ? image.explanation
+            : image.explanation.substring(0, 200) + '...'}
+        </Typography>
+        {expand ? null : (
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Button
+              sx={{ color: 'text.secondary' }}
+              onClick={() => {
+                setExpand(!expand)
+              }}
+            >
+              Read more
+            </Button>
+          </Box>
+        )}
       </CardContent>
       <Grid container>
         <Grid item xs={10}>

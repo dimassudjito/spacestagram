@@ -48,6 +48,7 @@ const App = () => {
   useEffect(() => {
     getImages()
   }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
