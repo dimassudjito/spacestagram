@@ -15,7 +15,7 @@ const Header = () => {
         <Box sx={{ flexGrow: 1 }} />
         {/* enterTouchDelay make tooltip appear on touch*/}
         <Tooltip
-          title="Shopify fall intern challenge, inspired by Tumblr"
+          title="Short for Spacestagram. Shopify summer intern challenge. Inspired by Tumblr"
           enterTouchDelay={0}
         >
           <HelpOutlineIcon />
