@@ -3,7 +3,6 @@ import React from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Card from '@mui/material/Card'
 import CircularProgress from '@mui/material/CircularProgress'
 
 import Post from './Post.js'
