@@ -4,17 +4,20 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
+import CircularProgress from '@mui/material/CircularProgress'
 
 import Post from './Post.js'
 
-const Timeline = ({ images }) => {
+const Timeline = ({ images, loading }) => {
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+        <CircularProgress color="secondary" />
+      </Box>
+    )
+  }
   return (
-    <Box
-      sx={{
-        bgcolor: 'primary.main',
-        mt: -4
-      }}
-    >
+    <Box>
       <Container sx={{ py: 8 }} maxWidth="md">
         <Grid container>
           <Grid item xs={12} md={8}>

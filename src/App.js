@@ -18,18 +18,23 @@ const theme = createTheme({
     },
     secondary: {
       main: '#ffffff'
+    },
+    background: {
+      default: '#1f2b38'
     }
   }
 })
 
 const App = () => {
   const [images, setImages] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const getImages = async () => {
     try {
       const { data } = await axios.get(api)
       console.log(data)
       setImages(data)
+      setLoading(false)
     } catch (err) {
       console.error(err)
     }
@@ -44,7 +49,7 @@ const App = () => {
       <Header />
       <main>
         <Title />
-        <Timeline images={images} />
+        <Timeline images={images} loading={loading} />
       </main>
     </ThemeProvider>
   )

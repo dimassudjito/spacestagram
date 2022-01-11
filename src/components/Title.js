@@ -8,7 +8,6 @@ const Title = () => {
   return (
     <Box
       sx={{
-        bgcolor: 'primary.main',
         pt: 8
       }}
     >
